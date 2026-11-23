@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>教材学习资源导航 · 免费电子课本与开放课程</title>
+<meta name="description" content="面向中小学到大学的免费教材学习资源导航索引：官方电子课本、国家智慧教育平台、高校开放课程、公版图书与工具书入口，一站直达。">
+<meta name="theme-color" content="#faf7f0">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<a class="skip" href="#library">跳到资源列表</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="./index.html">
+      <span class="seal" aria-hidden="true">教</span>
+      <span class="brand-text">
+        <strong>教材学习资源导航</strong>
+        <small>ChinaTextbookStudyFree</small>
+      </span>
+    </a>
+    <nav class="nav" aria-label="主导航">
+      <a href="#library">资源库</a>
+      <a href="#howto">使用方法</a>
+      <a href="guide.html">查找指南</a>
+      <a href="about.html">关于</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <p class="kicker">中小学 · 高中 · 大学 · 职业教育</p>
+      <h1>免费教材，<span class="mark">一站直达</span></h1>
+      <p class="lede">
+        把散落在各个官方网站的电子课本、开放课程与公版图书收进一张清单。
+        本站只做导航与检索，<strong>不托管、不转载任何教材文件</strong>，所有阅读都在官方平台上完成。
+      </p>
+
+      <div class="searchbar" role="search">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M16.5 16.5 21 21"/></svg>
+        <label class="visually-hidden" for="q">搜索资源</label>
+        <input id="q" type="search" placeholder="搜索：人教版、小学语文、电子课本、高中物理、公开课……" autocomplete="off">
+        <kbd class="hint">/</kbd>
+      </div>
+
+      <ul class="stats" id="stats">
+        <li><strong id="stat-count">—</strong><span>个资源入口</span></li>
+        <li><strong>4</strong><span>个国家级平台</span></li>
+        <li><strong>0</strong><span>个版权文件</span></li>
+      </ul>
+    </div>
+    <div class="hero-rule" aria-hidden="true"></div>
+  </section>
+
+  <section class="library" id="library">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>资源库</h2>
+        <p class="section-sub">按学段筛选，或直接搜索教材版本、学科、平台名。</p>
+      </div>
+
+      <div class="filters" role="group" aria-label="按学段筛选">
+        <button class="chip is-active" data-filter="all" type="button">全部</button>
+        <button class="chip" data-filter="小学" type="button">小学</button>
+        <button class="chip" data-filter="初中" type="button">初中</button>
+        <button class="chip" data-filter="高中" type="button">高中</button>
+        <button class="chip" data-filter="大学" type="button">大学</button>
+        <button class="chip" data-filter="职教" type="button">职业教育</button>
+        <button class="chip" data-filter="综合" type="button">综合与工具</button>
+      </div>
+
+      <p class="result-line" aria-live="polite"><span id="result-count">0</span> 条结果</p>
+      <div class="grid" id="grid"></div>
+      <p class="empty" id="empty" hidden>没有匹配的资源，换个关键词试试，例如「电子课本」「物理」「公开课」。</p>
+    </div>
+  </section>
+
+  <section class="howto" id="howto">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>三步找到你要的那本教材</h2>
+        <p class="section-sub">官方平台的检索逻辑基本一致，掌握版本、年级、学科三要素就能精准命中。</p>
+      </div>
+      <ol class="steps">
+        <li>
+          <span class="step-no">01</span>
+          <h3>先认版本</h3>
+          <p>翻开手里课本的扉页，看清出版社与版本年份。人教版、统编版、北师大版、苏教版的内容并不相同，选错版本就等于换了一本书。</p>
+        </li>
+        <li>
+          <span class="step-no">02</span>
+          <h3>再定年级册次</h3>
+          <p>注意「上册 / 下册」「必修 / 选择性必修」「第几册」这些差异。高中教材尤其要看是必修还是选择性必修，目录结构完全不同。</p>
+        </li>
+        <li>
+          <span class="step-no">03</span>
+          <h3>最后核对目录</h3>
+          <p>打开电子课本后先看目录页，与纸质书逐条比对单元标题。对得上就收藏链接，对不上就回上一步换版本或册次。</p>
+        </li>
+      </ol>
+      <p class="howto-more"><a class="textlink" href="guide.html">看完整查找指南与常见问题 →</a></p>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <div>
+      <p class="footer-title">ChinaTextbookStudyFree</p>
+      <p class="footer-note">本站为静态导航索引，资源版权归各官方平台与出版机构所有，仅供个人学习使用。</p>
+    </div>
+    <ul class="footer-links">
+      <li><a href="guide.html">查找指南</a></li>
+      <li><a href="about.html">关于与免责声明</a></li>
+      <li><a href="https://github.com/keith279997139/ChinaTextbookStudyFree" rel="noopener">GitHub 仓库</a></li>
+    </ul>
+  </div>
+  <div class="wrap footer-meta">
+    <span>最近更新：2026-11-24</span>
+    <span>建议使用 Chrome / Edge / Safari 最新版本访问</span>
+  </div>
+</footer>
+
+<script src="assets/resources.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>
