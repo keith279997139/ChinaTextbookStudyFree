@@ -15,7 +15,7 @@ jobs:
   enable-pages:
     runs-on: ubuntu-latest
     steps:
-      - name: Enable Pages (source: main / root, build type legacy)
+      - name: Configure Pages site
         env:
           TOKEN: ${{ secrets.GITHUB_TOKEN }}
           REPO: ${{ github.repository }}
@@ -32,26 +32,25 @@ jobs:
           echo "GET $api -> $code"
           cat /tmp/get.json || true
 
-          if [ "$code" = "404" ]; then
-            code2=$(curl -sS -o /tmp/write.json -w '%{http_code}' -X POST \
+          run_write() {
+            verb="$1"
+            code2=$(curl -sS -o /tmp/write.json -w '%{http_code}' -X "$verb" \
               -H "Authorization: Bearer ${TOKEN}" \
               -H "Accept: application/vnd.github+json" \
               -H "X-GitHub-Api-Version: 2022-11-28" \
               -d "$payload" "$api")
-            echo "POST -> $code2"
+            echo "$verb -> $code2"
             cat /tmp/write.json || true
+          }
+
+          if [ "$code" = "404" ]; then
+            run_write POST
             if [ "$code2" = "201" ] || [ "$code2" = "409" ]; then exit 0; fi
             exit 1
           fi
 
           if [ "$code" = "200" ]; then
-            code2=$(curl -sS -o /tmp/write.json -w '%{http_code}' -X PUT \
-              -H "Authorization: Bearer ${TOKEN}" \
-              -H "Accept: application/vnd.github+json" \
-              -H "X-GitHub-Api-Version: 2022-11-28" \
-              -d "$payload" "$api")
-            echo "PUT -> $code2"
-            cat /tmp/write.json || true
+            run_write PUT
             if [ "$code2" = "204" ]; then exit 0; fi
             exit 1
           fi
